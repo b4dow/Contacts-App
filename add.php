@@ -13,9 +13,9 @@ $error = null;
       $name  = $_POST["name"];
       $phoneNumber = $_POST["phone_number"];
 
-      $statement = $conn->prepare("INSERT INTO contacts (name,phone_number) VALUES (:name, :phone_number)");
+      $statement = $conn->prepare("INSERT INTO contacts (name ,phone_number) VALUES (:name, :phone_number)");
       $statement->bindParam(":name", $_POST["name"]);
-      $statement->bindParam(":name", $_POST["phone_number"]);
+      $statement->bindParam(":phone_number", $_POST["phone_number"]);
       $statement->execute();
 
       header("Location: index.php");
